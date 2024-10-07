@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      right: 10px;
+    }
+
+    button {
+      background: none;
+      border: 1px solid;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    img {
+      object-fit: contain;
+    }
+
+    iframe {
+      width: 50%;
+      height: auto;
+    }
+
+    .container {
+      /* width: 70%; */
+      margin: 1rem;
+    }
+
+    .flex {
+      display: flex;
+      /* justify-content: space-between; */
+      gap: 2rem;
+    }
+
+    .input-field {
+      margin: 1rem 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+
+    #mark-1,
+    #mark-2 {
+      background-color: yellow;
+    }
+
+    .input-datalist {
+      border: none;
+      border-bottom: 0.5px solid black;
+    }
+  </style>
+  <body>
+    <div class="container" id="login-page">
+      <header>
+        <h2>HTML5 MARK-DATALIST SCORM - SCOs</h2>
+      </header>
+      <header>
+        <h3 class="container-header">User Login</h3>
+      </header>
+      <form id="login-form">
+        <label for="login-username">Username:</label>
+        <input
+          id="login-username"
+          class="input-field"
+          name="login"
+          type="text"
+          required
+        />
+        <br />
+        <label for="login-password">Password:</label>
+        <input
+          id="login-password"
+          class="input-field"
+          name="login"
+          type="password"
+          required
+        />
+        <div class="flex">
+          <a href="#"> Create Account/Forgot? </a>
+          <button id="login-btn" type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container hidden" id="container-question-1">
+      <header>
+        <h3 class="container-header">Question 1</h3>
+      </header>
+
+      <p>
+        Given points (x₁, y₁) and (x₂, y₂), select the formula to find the
+        equation of the given line.
+      </p>
+      <div class="flex">
+        <form id="form-question-1">
+          <label>
+            <input type="radio" name="equation" value="option1" required />
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>y</mi>
+              <mo>=</mo>
+              <mi>m</mi>
+              <mi>x</mi>
+              <mo>+</mo>
+              <mi>b</mi>
+            </math>
+          </label>
+          <br /><br />
+
+          <label>
+            <input type="radio" name="equation" value="option2" />
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mo>(</mo>
+              <mi>x</mi>
+              <mo>-</mo>
+              <mi>h</mi>
+              <mo>)</mo>
+              <sup>
+                <mn>2</mn>
+              </sup>
+              <mo>+</mo>
+              <mfenced open="(" close=")">
+                <mo>(</mo>
+                <mi>y</mi>
+                <mo>-</mo>
+                <mi>k</mi>
+                <mo>)</mo>
+              </mfenced>
+              <sup>
+                <mn>2</mn>
+              </sup>
+              <mo>=</mo>
+              <mi>r</mi>
+              <sup>
+                <mn>2</mn>
+              </sup>
+            </math>
+          </label>
+          <br /><br />
+
+          <label>
+            <input type="radio" name="equation" value="option3" />
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>y</mi>
+              <mo>-</mo>
+              <msub>
+                <mi>y</mi>
+                <mn>1</mn>
+              </msub>
+              <mo>=</mo>
+              <mi>m</mi>
+              <mfenced open="(" close=")">
+                <mo>(</mo>
+                <mi>x</mi>
+                <mo>-</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>)</mo>
+              </mfenced>
+            </math>
+          </label>
+          <br /><br />
+
+          <label>
+            <input type="radio" name="equation" value="option4" />
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>y</mi>
+              <mo>-</mo>
+              <msub>
+                <mi>y</mi>
+                <mn>2</mn>
+              </msub>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <msub>
+                    <mi>y</mi>
+                    <mn>2</mn>
+                  </msub>
+                  <mo>-</mo>
+                  <msub>
+                    <mi>y</mi>
+                    <mn>1</mn>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <msub>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                  </msub>
+                  <mo>-</mo>
+                  <msub>
+                    <mi>x</mi>
+                    <mn>1</mn>
+                  </msub>
+                </mrow>
+              </mfrac>
+              <mfenced open="(" close=")">
+                <mo>(</mo>
+                <mi>x</mi>
+                <mo>-</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mn>2</mn>
+                </msub>
+                <mo>)</mo>
+              </mfenced>
+            </math>
+          </label>
+          <br /><br />
+
+          <button type="submit" id="question-1-next">
+            Submit & Next Question
+          </button>
+          <button type="reset">Cancel & Clear Selection</button>
+        </form>
+        <img src="./assets/math_question_img.png" />
+      </div>
+    </div>
+
+    <div class="container hidden" id="container-question-2">
+      <header>
+        <h3 class="container-header">Question 2</h3>
+      </header>
+
+      <div class="flex">
+        <form id="form-question-2">
+          <!-- Option 1: cos(α ± β) = cos α cos β ∓ sin α sin β -->
+          <label>
+            <input type="radio" name="equation" value="option1" required />
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>cos</mi>
+              <mo>(</mo>
+              <mi>α</mi>
+              <mo>±</mo>
+              <mi>β</mi>
+              <mo>)</mo>
+              <mo>=</mo>
+              <mi>cos</mi>
+              <mi>α</mi>
+              <mi>cos</mi>
+              <mi>β</mi>
+              <mo>∓</mo>
+              <mi>sin</mi>
+              <mi>α</mi>
+              <mi>sin</mi>
+              <mi>β</mi>
+            </math>
+          </label>
+          <br /><br />
+
+          <!-- Option 2: sin(α ± β) = sin α cos β ± cos α sin β -->
+          <label>
+            <input type="radio" name="equation" value="option2" />
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>sin</mi>
+              <mo>(</mo>
+              <mi>α</mi>
+              <mo>±</mo>
+              <mi>β</mi>
+              <mo>)</mo>
+              <mo>=</mo>
+              <mi>sin</mi>
+              <mi>α</mi>
+              <mi>cos</mi>
+              <mi>β</mi>
+              <mo>±</mo>
+              <mi>cos</mi>
+              <mi>α</mi>
+              <mi>sin</mi>
+              <mi>β</mi>
+            </math>
+          </label>
+          <br /><br />
+
+          <!-- Option 3: sin α + sin β = 2 sin((α + β) / 2) cos((α − β) / 2) -->
+          <label>
+            <input type="radio" name="equation" value="option3" />
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>sin</mi>
+              <mi>α</mi>
+              <mo>+</mo>
+              <mi>sin</mi>
+              <mi>β</mi>
+              <mo>=</mo>
+              <mn>2</mn>
+              <mi>sin</mi>
+              <mo>(</mo>
+              <mfrac>
+                <mrow>
+                  <mi>α</mi>
+                  <mo>+</mo>
+                  <mi>β</mi>
+                </mrow>
+                <mn>2</mn>
+              </mfrac>
+              <mo>)</mo>
+              <mi>cos</mi>
+              <mo>(</mo>
+              <mfrac>
+                <mrow>
+                  <mi>α</mi>
+                  <mo>−</mo>
+                  <mi>β</mi>
+                </mrow>
+                <mn>2</mn>
+              </mfrac>
+              <mo>)</mo>
+            </math>
+          </label>
+          <br /><br />
+
+          <!-- Option 4: sin α − sin β = 2 cos((α + β) / 2) sin((α − β) / 2) -->
+          <label>
+            <input type="radio" name="equation" value="option4" />
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mi>sin</mi>
+              <mi>α</mi>
+              <mo>−</mo>
+              <mi>sin</mi>
+              <mi>β</mi>
+              <mo>=</mo>
+              <mn>2</mn>
+              <mi>cos</mi>
+              <mo>(</mo>
+              <mfrac>
+                <mrow>
+                  <mi>α</mi>
+                  <mo>+</mo>
+                  <mi>β</mi>
+                </mrow>
+                <mn>2</mn>
+              </mfrac>
+              <mo>)</mo>
+              <mi>sin</mi>
+              <mo>(</mo>
+              <mfrac>
+                <mrow>
+                  <mi>α</mi>
+                  <mo>−</mo>
+                  <mi>β</mi>
+                </mrow>
+                <mn>2</mn>
+              </mfrac>
+              <mo>)</mo>
+            </math>
+          </label>
+          <br /><br />
+
+          <button type="submit" id="question-2-next">
+            Submit & Next Question
+          </button>
+          <button type="reset">Cancel & Clear Selection</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container hidden" id="container-question-3">
+      <header>
+        <h3 class="container-header">Question 3</h3>
+      </header>
+      <p>
+        As per the latest Twitter news, complete the article snippet given by
+        selecting appropriate choices for the blanks.
+      </p>
+
+      <form id="form-question-3">
+        <p>
+          Twitter wants more cash $
+          <mark
+            ><input
+              id="mark-1"
+              class="input-datalist"
+              list="options-mark-1"
+              required
+          /></mark>
+          million debt offerings in a filing today, each with a potential $100
+          million increase provided that the sales are oversubscribed. Assuming
+          full tip, including the $100 million boosters,
+          <mark
+            ><input
+              id="mark-2"
+              class="input-datalist"
+              list="options-mark-2"
+              required
+          /></mark>
+          will raise up to $1.5 billion with the two offerings. (click on blanks
+          to view options)
+        </p>
+        <p class="source-link">
+          Source:
+          <a
+            href="http://techcrunch.com/2014/09/10/twitter-to-raise-up-to-1-5b-in-debt-offering/"
+            target="_blank"
+          >
+            http://techcrunch.com/2014/09/10/twitter-to-raise-up-to-1-5b-in-debt-offering/
+          </a>
+        </p>
+
+        <!-- Datalist for Mark 1 -->
+        <datalist id="options-mark-1">
+          <option value="$650"></option>
+          <option value="$550"></option>
+          <option value="$750"></option>
+        </datalist>
+
+        <!-- Datalist for Mark 2 -->
+        <datalist id="options-mark-2">
+          <option value="NASA.Gov"></option>
+          <option value="Data.Gov"></option>
+          <option value="Facebook"></option>
+          <option value="XYZ.net"></option>
+        </datalist>
+
+        <button type="submit" id="question-3-next">
+          Submit & Next Question
+        </button>
+        <button type="reset">Cancel & Clear Selection</button>
+      </form>
+    </div>
+
+    <div class="container hidden" id="container-question-4">
+      <header>
+        <h3 class="container-header">Question 4</h3>
+      </header>
+      <p>What the video and answer the following question.</p>
+      <p>What is the source as mentioned in the video?</p>
+      <div class="flex">
+        <form id="form-question-4">
+          <label>
+            <input type="radio" name="source" value="NASA.Gov" required />
+            NASA.Gov
+          </label>
+          <br /><br />
+          <label>
+            <input type="radio" name="source" value="Data.Gov" />
+            Data.Gov
+          </label>
+          <br /><br />
+          <label>
+            <input type="radio" name="source" value="Facebook" />
+            Facebook
+          </label>
+          <br /><br />
+          <label>
+            <input type="radio" name="source" value="XYZ.net" />
+            XYZ.net
+          </label>
+          <br />
+          <br />
+          <button type="submit" id="finish-btn">Submit & Next Question</button>
+          <button type="reset">Cancel & Clear Selection</button>
+        </form>
+        <div id="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/ih9jPaZct1w?si=KVew1Wx6LpIead2H"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <p><b>Expedition 40 Undocks Ending Mission</b></p>
+          <p class="source-link">
+            Source:
+            <a
+              href="http://www.nasa.gov/multimedia/videogallery/index.html#VBFBS5sdVOE"
+              target="_blank"
+            >
+              http://www.nasa.gov/multimedia/videogallery/index.html#VBFBS5sdVOE
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container hidden" id="score-card">
+      <header>
+        <h3 class="container-header">Score Card</h3>
+      </header>
+      <details open>
+        <summary>Quantitative Section</summary>
+        <div>
+          <p>
+            <b>Number of questions answered: </b>
+            <span id="quant-answered"></span>
+          </p>
+          <p>
+            <b>Number of Correct answers: </b> <span id="quant-correct"></span>
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Reading Section</summary>
+        <div>
+          <p>
+            <b>Number of questions answered: </b>
+            <span id="reading-answered"></span>
+          </p>
+          <p>
+            <b>Number of Correct answers: </b>
+            <span id="reading-correct"></span>
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Audio/Video Section</summary>
+        <div>
+          <p>
+            <b>Number of questions answered: </b> <span id="av-answered"></span>
+          </p>
+          <p>
+            <b>Number of Correct answers: </b> <span id="av-correct"></span>
+          </p>
+        </div>
+      </details>
+
+      <p>Final Score: <data id="final-score" value="0">0 out of 10</data></p>
+
+      <p>Thank You!</p>
+
+      <button id="complete-btn">Finish</button>
+    </div>
+
+    <footer>
+      <p>CMPE 280, 016197935</p>
+    </footer>
+
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Define the correct answers
+        const correctAnswers = {
+          question1: "option3",
+          question2: "option1",
+          mark1: "$650",
+          mark2: "NASA.Gov",
+          question4: "NASA.Gov",
+        };
+
+        let score = 0;
+        let totalQuestions = 4; // Adjust as per the total number of questions
+
+        // Keep track of questions answered in each section
+        let quantAnswered = 0;
+        let readingAnswered = 0;
+        let avAnswered = 0;
+
+        let quantCorrect = 0;
+        let readingCorrect = 0;
+        let avCorrect = 0;
+
+        // Get elements
+        const loginPage = document.getElementById("login-page");
+        const question1 = document.getElementById("container-question-1");
+        const question2 = document.getElementById("container-question-2");
+        const question3 = document.getElementById("container-question-3");
+        const question4 = document.getElementById("container-question-4");
+        const scoreCard = document.getElementById("score-card");
+
+        const loginBtn = document.getElementById("login-btn");
+        const question1NextBtn = document.getElementById("question-1-next");
+        const question2NextBtn = document.getElementById("question-2-next");
+        const question3NextBtn = document.getElementById("question-3-next");
+        const finishBtn = document.getElementById("finish-btn");
+        const completeBtn = document.getElementById("complete-btn");
+
+        // Hide all sections except login initially
+        loginPage.classList.remove("hidden");
+        question1.classList.add("hidden");
+        question2.classList.add("hidden");
+        question3.classList.add("hidden");
+        question4.classList.add("hidden");
+        scoreCard.classList.add("hidden");
+
+        // On login button click, show question 1
+        loginBtn.addEventListener("click", () => {
+          loginPage.classList.add("hidden");
+          question1.classList.remove("hidden");
+        });
+
+        // Move from question 1 to question 2 and check answer
+        question1NextBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const form1 = document.getElementById("form-question-1");
+          const selectedAnswer = form1.querySelector(
+            'input[name="equation"]:checked'
+          );
+
+          if (form1.checkValidity() && selectedAnswer) {
+            quantAnswered++;
+            if (selectedAnswer.value === correctAnswers.question1) {
+              score++;
+              quantCorrect++;
+            }
+            question1.classList.add("hidden");
+            question2.classList.remove("hidden");
+          } else {
+            form1.reportValidity();
+          }
+        });
+
+        // Move from question 2 to question 3 and check answer
+        question2NextBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const form2 = document.getElementById("form-question-2");
+          const selectedAnswer = form2.querySelector(
+            'input[name="equation"]:checked'
+          );
+
+          if (form2.checkValidity() && selectedAnswer) {
+            quantAnswered++;
+            if (selectedAnswer.value === correctAnswers.question2) {
+              score++;
+              quantCorrect++;
+            }
+            question2.classList.add("hidden");
+            question3.classList.remove("hidden");
+          } else {
+            form2.reportValidity();
+          }
+        });
+
+        // Move from question 3 to question 4 and check datalist answers
+        question3NextBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const form3 = document.getElementById("form-question-3");
+          const mark1Answer = document.getElementById("mark-1").value;
+          const mark2Answer = document.getElementById("mark-2").value;
+
+          if (form3.checkValidity()) {
+            readingAnswered += 2; // 2 inputs are there
+            if (mark1Answer === correctAnswers.mark1) {
+              score++;
+              readingCorrect++;
+            }
+            if (mark2Answer === correctAnswers.mark2) {
+              score++;
+              readingCorrect++;
+            }
+            question3.classList.add("hidden");
+            question4.classList.remove("hidden");
+          } else {
+            form3.reportValidity();
+          }
+        });
+
+        // On finish button, check the final question answer and show scorecard
+        finishBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const form4 = document.getElementById("form-question-4");
+          const selectedAnswer = form4.querySelector(
+            'input[name="source"]:checked'
+          );
+
+          if (form4.checkValidity() && selectedAnswer) {
+            avAnswered++;
+            if (selectedAnswer.value === correctAnswers.question4) {
+              score++;
+              avCorrect++;
+            }
+
+            // Show the scorecard
+            question4.classList.add("hidden");
+            scoreCard.classList.remove("hidden");
+
+            // Display the score in the scorecard sections
+            document.getElementById("quant-answered").textContent =
+              quantAnswered;
+            document.getElementById("quant-correct").textContent = quantCorrect;
+
+            document.getElementById("reading-answered").textContent =
+              readingAnswered;
+            document.getElementById("reading-correct").textContent =
+              readingCorrect;
+
+            document.getElementById("av-answered").textContent = avAnswered;
+            document.getElementById("av-correct").textContent = avCorrect;
+
+            // Update the final score using the <data> tag
+            const finalScoreElement = document.getElementById("final-score");
+            const finalPercentage = (score / 5) * 100; // Calculate the percentage
+            finalScoreElement.value = finalPercentage; // Set the value attribute dynamically
+            finalScoreElement.textContent = finalPercentage + "%"; // Update the text content
+          } else {
+            form4.reportValidity();
+          }
+        });
+
+        // Return to login page after clicking Finish and reset everything
+        completeBtn.addEventListener("click", () => {
+          score = 0;
+          quantAnswered = 0;
+          quantCorrect = 0;
+          readingAnswered = 0;
+          readingCorrect = 0;
+          avAnswered = 0;
+          avCorrect = 0;
+
+          loginPage.classList.remove("hidden");
+          scoreCard.classList.add("hidden");
+
+          // Clear previous selections if necessary
+          const forms = document.querySelectorAll("form");
+          forms.forEach((form) => form.reset());
+        });
+      });
+    </script>
+  </body>
+</html>
