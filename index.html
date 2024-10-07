@@ -554,7 +554,7 @@
       <p>CMPE 280, 016197935</p>
     </footer>
 
-    <script defer>
+    <script>
       document.addEventListener("DOMContentLoaded", () => {
         // Define the correct answers
         const correctAnswers = {
@@ -601,9 +601,10 @@
         scoreCard.classList.add("hidden");
 
         // On login button click, show question 1
-        loginBtn.addEventListener("click", () => {
-          loginPage.classList.add("hidden");
-          question1.classList.remove("hidden");
+        loginBtn.addEventListener("click", (e) => {
+          e.preventDefault(); 
+          loginPage.classList.add("hidden"); 
+          question1.classList.remove("hidden"); 
         });
 
         // Move from question 1 to question 2 and check answer
